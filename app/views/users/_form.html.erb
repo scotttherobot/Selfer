@@ -1,15 +1,5 @@
 <h3>New User Form</h3>
 <%= form_for @user do |f| %>
-   <% if @user.errors.any? %>
-      <div class="errors">
-         <ul>
-            <% for message in @user.errors.full_messages %>
-               <li><%= message %></li>
-            <% end %>
-         </ul>
-      </div>
-   <% end %>
-
    <p>
     <%= f.label :email %>
     <%= f.text_field :email %>

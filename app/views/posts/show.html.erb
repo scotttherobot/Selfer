@@ -1,0 +1,4 @@
+<h1>Post by <%= @post.user.username %></h1>
+<%= link_to "Edit", edit_post_path(@post) if can_edit @post %><br>
+<%= image_tag @post.image %><br>
+<p><%= @post.body %></p>
