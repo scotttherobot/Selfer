@@ -17,3 +17,6 @@
 
 # Ignore file uploads
 /public/system/
+
+# Ignore all swap files
+*.swp
