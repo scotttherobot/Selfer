@@ -1,7 +1,6 @@
 <%= render 'post_header', :post => @post %>
 <%= render(@post) %>
 <%= link_to "Edit", edit_post_path(@post) if can_edit @post %><br>
-<%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <hr>
 <%= render 'show_comments' %>
