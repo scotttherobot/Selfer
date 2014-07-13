@@ -56,7 +56,7 @@ class UsersController < ApplicationController
   end
 
   def update_params
-     params.require(:user).permit(:email, :username, :avatar)
+     params.require(:user).permit(:email, :username, :avatar, :bio)
   end
 
   # Only the same user and admins can edit a user's profile
