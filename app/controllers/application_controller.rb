@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
   helper_method :require_admin
+  helper_method :require_login
 
   private
 
@@ -17,5 +18,11 @@ class ApplicationController < ActionController::Base
       if !current_user.is_admin
          redirect_to login_url, :notice => "Admin permission required"
       end
+  end
+
+  def require_login
+     if !current_user
+        redirect_to login_url, :notice => "You must login first!"
+     end
   end
 end

@@ -6,6 +6,7 @@ class PostsController < ApplicationController
    end
 
    def create
+      require_login
       @post = Post.new(post_params)
       @post.user = current_user
       if @post.save
@@ -16,6 +17,7 @@ class PostsController < ApplicationController
    end
    
    def new
+      require_login
       @post = Post.new
    end
 

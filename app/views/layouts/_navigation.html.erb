@@ -4,6 +4,7 @@
          <%= link_to 'Selfer', root_path, :class => "navbar-brand" %>
       </div>
       <ul class="nav navbar-nav navbar-right">
+         <li><%= link_to content_tag(:span, "", class:'glyphicon glyphicon-camera'), new_post_url %></li>
          <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user ? current_user.username : "Menu"  %><span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">

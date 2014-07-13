@@ -1,5 +1,5 @@
 <%= render 'user_header', :user => @user %>
 
-<%= link_to "Edit Profile", edit_user_path(@user) if can_edit %><br>
+<%= link_to "New Post", new_post_url if can_edit %></br>
 
 <%= render(@user.posts) or "No Posts" %>

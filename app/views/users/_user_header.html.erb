@@ -8,7 +8,9 @@
          <%= image_tag user.avatar.url, :width => "100%"  %>
          <div class="carousel-caption">
             <h1><%= user.username %></h1>
-            <p><%= user.bio %></p>
+            <p><%= user.bio %>
+            <%= link_to content_tag(:span, "", class:'glyphicon glyphicon-pencil'), edit_user_path(user) if can_edit %>
+            </p>
          </div>
       </div>
    </div>
