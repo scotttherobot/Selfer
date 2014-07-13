@@ -1,0 +1,11 @@
+<div id="user-header-carousel" class="carousel slide" data-ride="carousel">
+   <div class="carousel-inner">
+      <div class="item active" style="max-height: 200px; overflow: hidden;">
+         <%= image_tag @post.user.avatar.url, :width => "100%", :class => "img-rounded"  %>
+         <div class="carousel-caption">
+            <h1><%= link_to @post.user.username, user_url(@post.user) %></h1>
+            <p><%= @post.user.bio %></p>
+         </div>
+      </div>
+   </div>
+</div>

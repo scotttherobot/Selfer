@@ -6,4 +6,8 @@ class Post < ActiveRecord::Base
 
    validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
+   validates :image, presence: true
+   validates :body, presence: true
+   validates_presence_of :user
+
 end

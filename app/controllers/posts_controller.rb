@@ -44,6 +44,7 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
       self_edit_only(@post)
       @post.destroy
+      redirect_to posts_url, :notice => "Post deleted!"
    end
 
    private
