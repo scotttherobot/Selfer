@@ -2,3 +2,7 @@
 <%= link_to "Edit Profile", edit_user_path(@user) if can_edit %><br>
 
 <%= image_tag @user.avatar.url(:medium) %>
+
+<h2><%= @user.username %>'s posts</h2>
+
+<%= render(@user.posts) or "No Posts" %>

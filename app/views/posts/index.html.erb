@@ -1,8 +1,4 @@
 <h1>Posts Index</h1>
 <%= link_to "New Post", new_post_url if current_user %>
 
-<ul>
-<% @posts.each do |p| %>
-   <li><%= link_to (image_tag p.image(:thumb)), post_path(p) %></li>
-<% end %>
-</ul>
+<%= render(@posts) %>
