@@ -1,5 +1,3 @@
-<h4>edit</h4>
-
 <%= form_for @user, :html => { :multipart => true } do |f| %>
    <% if @user.errors.any? %>
       <div class="errors">
@@ -28,5 +26,5 @@
     <%= f.file_field :avatar %><br>
     <span><%= image_tag @user.avatar.url(:thumb) %></span>
    </p>
-   <%= f.submit %>
+   <%= f.submit "Save", :class => "btn btn-success" %>
 <% end %>

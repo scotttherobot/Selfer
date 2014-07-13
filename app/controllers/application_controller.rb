@@ -12,6 +12,12 @@ class ApplicationController < ActionController::Base
   def current_user
      # @current_user ||= User.find_by(session: session[:token]) if session[:token]
      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  rescue ActiveRecord::RecordNotFound
+     # If the user isn't found, that probably means they deleted their account.
+     # We can flash an error, and then sign out the old user.
+     flash[:alert] = "The user you are signed in as no longer exists."
+     @current_user = nil
+     session[:user_id] = nil
   end
 
   def require_admin

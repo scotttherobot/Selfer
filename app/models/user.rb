@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-   has_many :articles
-   has_many :posts
+   has_many :articles, :dependent => :delete_all
+   has_many :posts, :dependent => :delete_all
+   has_many :comments, :dependent => :delete_all
 
    attr_accessor :password
    before_save :encrypt_password

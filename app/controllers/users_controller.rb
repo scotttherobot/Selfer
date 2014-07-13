@@ -42,6 +42,11 @@ class UsersController < ApplicationController
   def destroy
      self_edit_only
      @user = User.find(params[:id])
+     if @user.destroy
+        redirect_to site_root, :notice => "Account deleted!"
+     else
+        render "edit", :notice => "Deletion failure!"
+     end
   end
 
   # A listing of all users?
