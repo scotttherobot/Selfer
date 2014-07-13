@@ -1,0 +1,20 @@
+<h2>Articles Index</h2>
+<% if current_user && current_user.is_admin %>
+   <h3><%= link_to 'New Article', new_article_url %></h3>
+<% end %>
+
+<div class="articles">
+   <% @articles.each do |article| %>
+      <div class="article" id="<%= article.id %>" style="border: 1px solid black;">
+         <h3><%= article.title %></h3>
+         <h4>By <%= article.user.email %></h4>
+         <p><%= article.text %></p>
+         <span>
+            <%= link_to 'Show', article_path(article) %><% if current_user && current_user.is_admin %> | 
+            <%= link_to 'Edit', edit_article_path(article) %> | 
+            <%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'} %>
+            <% end %>
+         </span>
+      </div>
+   <% end %>
+</div>

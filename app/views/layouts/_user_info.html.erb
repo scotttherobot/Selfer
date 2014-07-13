@@ -1,0 +1,9 @@
+<div class="user-info">
+   <% if current_user %>
+      <span><%= current_user.email %> | <%= link_to "Log Out", logout_path %>
+         <% if current_user.is_admin %> | ADMIN <% end %>
+      </span>
+   <% else %>
+      <span><%= link_to "Sign Up", signup_path %> | <%= link_to "Log In", login_path %></span>
+   <% end %>
+</div>
