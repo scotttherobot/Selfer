@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+   <div class="panel-heading">
+      <h4 class="panel-title">Leave a Comment</h4>
+   </div>
+   <div class="panel-body">
+   <%= form_for([@post, @post.comments.build]) do |f| %>
+      <p>
+       <%= f.label :body %><br>
+       <%= f.text_area :body %>
+      </p>
+      <p>
+      <%= f.submit "Post Comment", :class => "btn btn-primary" %>
+      </p>
+   <% end %>
+   </div>
+</div>

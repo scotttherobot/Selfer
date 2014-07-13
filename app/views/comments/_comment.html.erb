@@ -1,0 +1,13 @@
+<div id="comment" class="row">
+   <div class="col-md-2">
+      <%= image_tag comment.user.avatar.url(:thumb) %>
+      <span>
+         <strong><%= link_to comment.user.username, user_url(comment.user) %></strong>
+      </span>
+   </div>
+   <div class="col-md-10">
+      <p><em>On <%= comment.created_at.to_formatted_s(:long_ordinal) %>, <%= comment.user.username %> wrote:</em></p>
+      <p><%= comment.body %></p>
+   </div>
+</div>
+

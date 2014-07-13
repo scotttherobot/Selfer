@@ -1,9 +1,0 @@
-<h3>Comments:</h2>
-
-<% @post.comments.each do |c| %>
-   <div id="comment">
-      <span><strong><%= c.user.username %></strong></span>
-      <p><%= c.body %></p>
-   </div>
-<% end %>
-

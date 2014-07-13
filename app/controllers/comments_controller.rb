@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
       if @comment.save
          redirect_to post_path(@post), :notice => "Your comment was posted!"
       else
-         redirect_to post_path(@post), :notice => "Your comment was not posted!"
+         redirect_to post_path(@post), :alert => "Your comment was not posted!" 
       end
    end
 
