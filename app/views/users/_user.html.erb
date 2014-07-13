@@ -1,0 +1,10 @@
+<div id="user-<%= user.username %>" class="row">
+   <div class="col-md-6">
+      <%= link_to (image_tag user.avatar, :width => "100%"), user_path(user) %>
+   </div>
+   <div class="col-md-6">
+      <div class="page-header">
+         <h4><%= link_to user.username, user_path(user) %></h4>
+      </div>
+   </div>
+</div>

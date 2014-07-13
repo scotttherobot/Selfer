@@ -1,7 +1,28 @@
-<div class="navigation">
-   <ul>
-      <li><%= link_to 'Home', root_path %></li>
-      <li><%= link_to 'Users', users_path %></li>
-      <li><%= link_to 'Posts', posts_path %></li>
-   </ul>
-</div>
+<nav class="navbar navbar-default" role="navigation">
+   <div class="container-fluid">
+      <div class="navbar-header">
+         <%= link_to 'Selfer', root_path, :class => "navbar-brand" %>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+         <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user ? current_user.username : "Menu"  %><span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+               <li><%= link_to 'Home', root_path %></li>
+               <li><%= link_to 'Public Feed', posts_path %></li>
+               <li><%= link_to 'Users', users_path %></li>
+               <% if current_user %>
+                  <li><%= link_to 'My Profile', user_path(current_user) %></li>
+                  <li><%= link_to 'Log Out', logout_path %></li>
+                  <% if current_user.is_admin %>
+                     <li><%= link_to 'Admin', root_path %></li>
+                  <% end %>
+               <% else %>
+                  <li><%= link_to 'Sign In', login_path %></li>
+                  <li><%= link_to 'Sign Up', signup_path %></li>
+               <% end %>
+            </ul>
+         </li>
+      </ul>
+
+   </div>
+</nav>

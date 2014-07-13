@@ -1,4 +1,7 @@
-<h1>Posts Index</h1>
+<div class="page-header">
+   <h1>Public Feed</h1>
+</div>
+
 <%= link_to "New Post", new_post_url if current_user %>
 
 <%= render(@posts) %>

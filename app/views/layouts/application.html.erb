@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
+   <title><%= @title or "Selfer" %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-   <h2>Selfer</h2>
-   <%= render 'layouts/user_info' %>
-   <%= render 'layouts/navigation' %>
-   <%= render 'layouts/flash' %>
+   <div class="container">
+      <br>
+      <%= render 'layouts/navigation' %>
+      <%= render 'layouts/flash' %>
 
-<%= yield %>
+      <%= yield %>
+   </div>
 
 </body>
 </html>

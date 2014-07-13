@@ -1,0 +1,20 @@
+<div id="user-header-carousel" class="carousel slide" data-ride="carousel">
+   <ol class="carousel-indicators">
+      <li data-target="#user-header-carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#user-header-carousel" data-slide-to="1"></li>
+   </ol>
+   <div class="carousel-inner">
+      <div class="item active" style="max-height: 400px; overflow: hidden;">
+         <%= image_tag user.avatar.url, :width => "100%"  %>
+         <div class="carousel-caption">
+            <h1><%= user.username %></h1>
+         </div>
+      </div>
+   </div>
+   <a class="left carousel-control" href="#user-header-carousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+   </a>
+   <a class="right carousel-control" href="#user-header-carousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+   </a>
+</div>

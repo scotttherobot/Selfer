@@ -1,7 +1,3 @@
 <h1>User Index</h1>
 
-<ul>
-<% @users.each do |u| %>
-   <li><%= image_tag u.avatar(:thumb) %><%= link_to u.username, user_path(u) %></li>
-<% end %>
-</ul>
+<%= render(@users) %>

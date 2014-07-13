@@ -1,3 +1,14 @@
-<div id="post-<%= post.id %>">
-   <%= link_to (image_tag post.image(:thumb)), post_path(post) %>
+<div id="post-<%= post.id %>" class="row">
+   <div class="col-md-6">
+      <%= link_to (image_tag post.image, :width => "100%"), post_path(post) %>
+   </div>
+   <div class="col-md-6">
+      <div class="page-header">
+         <h4>
+            <%= post.created_at.to_formatted_s(:long_ordinal)  %>
+            <small><%= link_to (pluralize(post.comments.count, "comment")), post_path(post) %></small>
+         </h4>
+      </div>
+      <p><%= post.body %></p>
+   </div>
 </div>
