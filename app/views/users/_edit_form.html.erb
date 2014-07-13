@@ -1,5 +1,6 @@
-<h3>New User Form</h3>
-<%= form_for @user do |f| %>
+<h4>edit</h4>
+
+<%= form_for @user, :html => { :multipart => true } do |f| %>
    <% if @user.errors.any? %>
       <div class="errors">
          <ul>
@@ -19,12 +20,9 @@
     <%= f.text_field :username %>
    </p>
    <p>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %><br>
+    <span><%= image_tag @user.avatar.url(:thumb) %></span>
    </p>
-   <p>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-   </p>
-   <p class="button"><%= f.submit %></p>
+   <%= f.submit %>
 <% end %>

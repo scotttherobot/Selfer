@@ -43,3 +43,6 @@ gem 'pg'
 
 # Bcrypt for password hashing
 gem 'bcrypt', :require => "bcrypt"
+
+#paperclip for file storage
+gem 'paperclip', '~> 4.1'
