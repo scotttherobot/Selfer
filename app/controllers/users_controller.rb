@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   def create
      @user = User.new(user_params)
      if @user.save
-        redirect_to login_url, :notice => "Sign up successful!"
+        session[:user_id] = @user.id
+        redirect_to root_path, :notice => "Sign up successful!"
      else
         render "new"
      end
@@ -43,7 +44,7 @@ class UsersController < ApplicationController
      self_edit_only
      @user = User.find(params[:id])
      if @user.destroy
-        redirect_to site_root, :notice => "Account deleted!"
+        redirect_to root_path, :notice => "Account deleted!"
      else
         render "edit", :notice => "Deletion failure!"
      end

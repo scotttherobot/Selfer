@@ -6,7 +6,7 @@
    <%= form_for([@post, @post.comments.build]) do |f| %>
       <p>
        <%= f.label :body %><br>
-       <%= f.text_area :body %>
+       <%= f.text_area :body, :placeholder => "u look fat lol #byeeee" %>
       </p>
       <p>
       <%= f.submit "Post Comment", :class => "btn btn-primary" %>

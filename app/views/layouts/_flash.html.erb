@@ -3,12 +3,13 @@
    <% flash.each do |name, msg| %>
       <% @class = (name == 'alert') ? "danger" : "success" %>
          <div class="alert alert-<%= @class %> alert-dismissable" role="alert">
-         <button type="button" class="close" data-dismiss="alert">
-            <span aria-hidden="true">&times;</span>
-            <span class="sr-only">Close</span>
-         </button>
-         <strong><%= name %></strong>
-         <%= msg %>
+            <button type="button" class="close" data-dismiss="alert">
+               <span aria-hidden="true">&times;</span>
+               <span class="sr-only">Close</span>
+            </button>
+            <strong><%= name %></strong>
+            <%= msg %>
+         </div>
    <% end %>
 </div>
 <% end %>
