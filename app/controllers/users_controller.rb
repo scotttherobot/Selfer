@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   # a user's profile page
   def show
-     @user = User.find(params[:id])
+     @user = User.includes(:posts).find(params[:id])
   end
 
   # the edit page
