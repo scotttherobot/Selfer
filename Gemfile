@@ -50,3 +50,6 @@ gem 'bcrypt', :require => "bcrypt"
 
 #paperclip for file storage
 gem 'paperclip', '~> 4.1'
+
+# Pagination via will_paginate
+gem 'will_paginate', '~> 3.0'

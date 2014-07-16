@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+   self.per_page = 10
+
    has_many :articles, :dependent => :delete_all
    has_many :posts, :dependent => :delete_all
    has_many :comments, :dependent => :delete_all

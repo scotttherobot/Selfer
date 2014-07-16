@@ -5,3 +5,4 @@
 <%= link_to "New Post", new_post_url if current_user %>
 
 <%= render(@posts) %>
+<%= will_paginate @posts %>

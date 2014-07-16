@@ -52,7 +52,7 @@ class UsersController < ApplicationController
 
   # A listing of all users?
   def index
-     @users = User.order("created_at DESC").all
+     @users = User.page(params[:page]).order("created_at DESC").all
   end
 
   private

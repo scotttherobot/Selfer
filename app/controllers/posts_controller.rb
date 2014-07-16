@@ -2,7 +2,7 @@ class PostsController < ApplicationController
    helper_method :can_edit
 
    def index
-      @posts = Post.order("created_at DESC").includes(:comments).all
+      @posts = Post.page(params[:page]).order("created_at DESC").includes(:comments).all
    end
 
    def create

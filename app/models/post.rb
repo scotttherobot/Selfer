@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
+   self.per_page = 10
+
+
    belongs_to :user
    has_many :comments, :dependent => :delete_all
 
